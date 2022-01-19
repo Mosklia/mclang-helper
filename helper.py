@@ -31,7 +31,7 @@ def process(originFile, outputFile):
         result = requireTranslation(key, text, oldStr.get(key))
         if result: outputStr[key] = result
     with open(outputFile, "w") as output:
-        json.dump(outputStr, output, indent=4)
+        json.dump(outputStr, output, indent=4, ensure_ascii=False)
 
 def requireTranslation(key, origin, old = None):
     if old:
